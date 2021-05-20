@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>K`onnor</title><meta name="description"><meta name="author" content="KangKang"><meta name="copyright" content="KangKang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="K`onnor"><meta property="og:url" content="http://yoursite.com/"><meta property="og:site_name" content="K`onnor"><meta property="og:description"><meta property="og:image" content="http://yoursite.com/img/avatar.png"><meta property="article:published_time" content="2021-05-20T03:58:22.105Z"><meta property="article:modified_time" content="2021-05-20T03:58:22.105Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="K`onnor" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">28</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 画册</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/photo/bgimg2.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">K`onnor</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 画册</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">K`onnor</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Nomore-name" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/05/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="数据结构与算法:哈夫曼树与哈夫曼编码">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:哈夫曼树与哈夫曼编码"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/05/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="数据结构与算法:哈夫曼树与哈夫曼编码">数据结构与算法:哈夫曼树与哈夫曼编码</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-05-19 12:27:17"><i class="far fa-calendar-alt"></i>2021-05-19</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content">本篇博客主要讲解哈夫曼树以及哈夫曼编码的基本代码和思路~~
+
+哈夫曼树哈夫曼树的定义在学习哈夫曼树的概念之前，我们先复习一些树的基本概念
+
+路径：若树中存在一个结点序列k1,k2,…,kj，使得ki是ki+1的双亲，则称该结点序列是从k1到kj的一条路径。
+路径长度：等于路径上的结点数减1。
+结点的权：在许多应用中，常常将树中的结点赋予一个有意义的数，称为该结点的权。
+结点的带权路径长度：是指该结点到树根之间的路径长度与该结点上权的乘积。
+树的带权路径长度：树中所有叶子结点的带权路径长度之和
+
+给定N个权值作为N个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。
+哈夫曼树的构建 
+（若看完动图还不理解的同学建议找一些视频看一下，这里用文字不好表述）
+哈夫曼树的特点
+n1 = 0（度数为1的结点个数为0）
+n = n0+n1+n2 = n0+n2 =2n0-1
+
+哈夫曼编码规定哈夫曼树中的左分支为0，右分支为1，则从根结点到每个叶结点所经过的分支对应的0 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/04/11/JavaScript%E5%85%A5%E9%97%A8III-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="JavaScript入门III:对象">     <img class="post_bg" data-src="/photo/JAVASCRIPT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript入门III:对象"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/11/JavaScript%E5%85%A5%E9%97%A8III-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="JavaScript入门III:对象">JavaScript入门III:对象</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-04-11 21:57:39"><i class="far fa-calendar-alt"></i>2021-04-11</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">JavaScript同样是一门面向对象的语言，但和C++与JAVA这种面向对象语言不同的是，JavaScript没有类的概念，那么JavaScript具体是怎么实现对象的操作呢，这篇博文将带你揭晓
+
+在JavaScript中创建对象在JS中创建一个基本对象十分简单，只需要用{}将需要封装的属性和方法包括起来，再将其赋值给一个变量即可
+12345678910111213141516171819var Rectangle = &#123;    len:5,    wid:10,    cir:function()&#123;        console.log((this.len+this.wid)*2)    &#125;,    spa:function()&#123;        return this.len*this.wid    &#125;,    volume:function(hei)&#123;        return this.spa()*hei    &#125;&#125;console.log(Rectangle.len)Rectangle.cir() ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/03/16/JavaScript%E5%85%A5%E9%97%A8II-%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7%E4%B8%8E%E5%87%BD%E6%95%B0/" title="JavaScript入门II:异常捕获与函数">     <img class="post_bg" data-src="/photo/JAVASCRIPT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript入门II:异常捕获与函数"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/03/16/JavaScript%E5%85%A5%E9%97%A8II-%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7%E4%B8%8E%E5%87%BD%E6%95%B0/" title="JavaScript入门II:异常捕获与函数">JavaScript入门II:异常捕获与函数</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-03-16 11:57:39"><i class="far fa-calendar-alt"></i>2021-03-16</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">本篇博客我们接着学习JS，主要讲述异常捕获与函数这两方面知识。关于JS的运算符、流程控制语言这两部分与其它高级语言基本无二异，故不加以赘述。想全面了解的盆友可上网搜索相关内容具体了解
+
+异常捕获JavaScript中的异常捕获与JAVA几乎没什么差别，以下为基本的一些介绍
+异常抛出在JS中throw用于进行异常的抛出
+123456789101112131415var InputError = &#123;	NotNumberError : "请输入数字！",	DividendError:"被除数不能为0！"&#125;;function div(a,b)&#123;	if ((typeof a) != "number" || (typeof b) != "number")&#123;		throw InputError.NotNumberError;	&#125;	if (b===0) &#123;		throw InputError.DividendError;	&#125;	return a/b;&#125;div(3,0);
+
+运行结果：
+
+异常的捕获处理JS代码中抛出异常如果不 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/03/14/JavaScript%E5%85%A5%E9%97%A8I/" title="JavaScript入门I:变量与数据类型">     <img class="post_bg" data-src="/photo/JAVASCRIPT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript入门I:变量与数据类型"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/03/14/JavaScript%E5%85%A5%E9%97%A8I/" title="JavaScript入门I:变量与数据类型">JavaScript入门I:变量与数据类型</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-03-14 20:42:41"><i class="far fa-calendar-alt"></i>2021-03-14</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">这学期学校开了一门课讲ReactNative框架，非常Amazing啊（毕导打钱），学校居然还会教授这种比较主流的技术。由于个人对这一框架还是蛮感兴趣的，所以开门博客来记录一下本门课的知识点以及自学的一些内容，那么首先的话就得从JavaScript（以下简称JS）学起了。
+
+变量和我之前所写过的Dart语言一样，JS一样的可以用var来声明一个类型，从而让系统去判断该数据的实际类型
+1234var name="kk"var num=666			var flag=truevar v1,v2=999,v3=false
+
+在JS中，每行结尾的分号可有可无，但若在同一行中写了多条语句，就需要使用分号进行语句的分隔
+除此之外，JS甚至可以不用var关键字进行声明，但我们一般不建议这么使用
+数据类型Undefined类型意如其名，即代表未定义，声明未赋值、未声明的变量及美元返回值的函数都会被视为undefined类型
+1234567var namefunction test() &#123;&#125;var fun=test()console.log(typeof name)    //type ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/02/17/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Dart%E8%AF%AD%E8%A8%80III/" title="从零开始学习Dart语言 III:类">     <img class="post_bg" data-src="/photo/Dart.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从零开始学习Dart语言 III:类"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/02/17/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Dart%E8%AF%AD%E8%A8%80III/" title="从零开始学习Dart语言 III:类">从零开始学习Dart语言 III:类</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-02-17 22:57:19"><i class="far fa-calendar-alt"></i>2021-02-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Dart/">Dart</a></span></div><div class="content">本章主要介绍Dart语言中的类
+
+类Dart 是一种基于类和 mixin 继承机制（具体意思可参照如下博客：https://blog.csdn.net/weixin_33698823/article/details/91874916）的面向对象的语言，而本篇博客不介绍过多理论知识，只进行代码的编写
+类的初始化及调用123456789101112131415161718192021222324252627282930313233class Teacher &#123;  String name,lesson;  int age;  Teacher(String name,String lesson,int age)		//基本构造函数  &#123;    this.name=name;    this.lesson=lesson;    this.age=age;  &#125;  void classbegin()&#123;    print("$name上$lesson课");  &#125;&#125;class Student &#123;  String name;  in ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/02/15/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Dart%E8%AF%AD%E8%A8%80II/" title="从零开始学习Dart语言 II:函数、运算符与流程语句">     <img class="post_bg" data-src="/photo/Dart.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从零开始学习Dart语言 II:函数、运算符与流程语句"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/02/15/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Dart%E8%AF%AD%E8%A8%80II/" title="从零开始学习Dart语言 II:函数、运算符与流程语句">从零开始学习Dart语言 II:函数、运算符与流程语句</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-02-15 23:00:49"><i class="far fa-calendar-alt"></i>2021-02-15</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Dart/">Dart</a></span></div><div class="content">本章让我们来继续学习Dart语言，这一次我们要学习的内容有函数、运算符和流程语句
+
+函数Dart 是一门真正面向对象的语言， 甚至其中的函数也是对象，并且有它的类型 Function。这也意味着函数可以被赋值给变量或者作为参数传递给其他函数。 也可以把 Dart 类的实例当做方法来调用。
+除此之外Dart提供了可选命名参数和可选参数。
+具体方式是，在声明函数时：
+
+给参数增加{}，以 paramName: value 的方式指定调用参数，也就是可选命名参数；
+给参数增加 []，则意味着这些参数是可以忽略的，也就是可选参数。
+
+Dart中的函数跟其它高级语言没有太大差别，以下是几种常用方法
+1234567891011121314151617181920212223242526void output(var p)&#123;    print(p);&#125;add(int a,int b,[int c])    //可省略返回类型&#123;  return a+b;&#125;test(&#123;int a,int b&#125;)   //可选命名参数&#123;  print( ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/02/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Dart%E8%AF%AD%E8%A8%80I/" title="从零开始学习Dart语言 I:变量与类型">     <img class="post_bg" data-src="/photo/Dart.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从零开始学习Dart语言 I:变量与类型"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/02/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Dart%E8%AF%AD%E8%A8%80I/" title="从零开始学习Dart语言 I:变量与类型">从零开始学习Dart语言 I:变量与类型</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-02-10 16:16:13"><i class="far fa-calendar-alt"></i>2021-02-10</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Dart/">Dart</a></span></div><div class="content">热衷于挖新坑的我又来啦！
+这次挖的坑是什么呢？当当当当，就是我们大名鼎鼎的Flutter！
+什么，Flutter是什么你没听说过？（其实我之前也没有）
+开这个专题主要原因是在校参与了一个项目，而我是负责APP开发的一块，而用到的是Flutter这一技术，Flutter需要用到Dart语言来进行编写，So，从零开始学习Dart语言，现在开始~
+
+HELLO WORLDDart语言是由Google开发的编程语言，具体背景我也不多加以赘述了，有兴趣的同学可以自行百度，而Google为Dart提供了一个强大的在线编译器，而这个编译器对于基本语法的初步了解是够用了，所以这一专题我都会采用这一在线编译器进行编译。
+Dart在线编译器地址：https://dartpad.cn/
+第一步，就让我们来运行一下官方的示例程序
+1234567891011// 定义一个函数printInteger(int num) &#123;  print('The is $num step.'); // 打印到控制台。  print("Hello World!");&#125;// 应用从这里开始执行。main() &# ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/" title="数据结构与算法:线索二叉树">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:线索二叉树"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/" title="数据结构与算法:线索二叉树">数据结构与算法:线索二叉树</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-02-02 11:21:51"><i class="far fa-calendar-alt"></i>2021-02-02</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content"> 
+如图所示，在上图二叉树中，我们有8个空指针域。在基本的二叉树存储结构中，我们总会存在空指针域，往往浪费了存储空间
+对于n个结点的二叉树，总有n+1个空指针域
+如何解决这个问题并提高二叉树遍历过程的效率呢，我们往往采用线索二叉树来解决
+
+线索二叉树的存储结构 
+我们在原来二叉树的基础结构上增加了两个标志位来区分两种情况
+ltag
+
+ltag若为true/0，表示左节点有孩子，指向左子树
+ltag若为false/1，表示无孩子，指向前驱
+
+rtag
+
+rtag若为true/0，表示右节点有孩子，指向右子树
+
+rtag若为false/1，表示无孩子，指向后继
+这里的前驱和后继指的是二叉树遍历后该结点的前驱和后继，我们一般采用中序遍历来进行处理
+
+
+ 
+如图所示，中序遍历往往更适合多个节点的间隔存放
+线索二叉树的头结点跟双向链表一样，为了更好的构造循环二叉树，我们也会在构造中增加一个头结点，如下图所示
+ 
+看懵了吧？实不相瞒这第一次也把我看懵了，但我们换个方法就好理解多了
+ 
+最后一个结点的后继指向头结点，而头结点的后继又指回最后一个结点，头结点又可作为第一个结点的前驱，构成双向循环。
+（ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%8F%89%E6%A0%91III/" title="数据结构与算法:二叉树的遍历">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:二叉树的遍历"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%8F%89%E6%A0%91III/" title="数据结构与算法:二叉树的遍历">数据结构与算法:二叉树的遍历</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-01-31 12:42:25"><i class="far fa-calendar-alt"></i>2021-01-31</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content">本篇博客主要放二叉树遍历的代码，二叉树遍历的基本概念请参照前面博客“二叉树的基本概念”一文
+
+前序遍历递归解法123456789101112void Pre_traversal(BTnode* b)&#123;	if (b == NULL)		return;	else	&#123;		//根左右		cout &lt;&lt; b-&gt;data &lt;&lt; " ";		Pre_traversal(b-&gt;lchild);		Pre_traversal(b-&gt;rchild);	&#125;&#125;
+
+非递归解法1234567891011121314151617181920void Pretraversal(BTnode* b)&#123;	vector&lt;BTnode*&gt; stack;	BTnode* t = b;	while (stack.size()!=0||t!=NULL)	&#123;		while (t != NULL)		&#123;			cout &lt;&lt; t-&gt;data &lt;&lt; " ";		//先访问根节点			st ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%8F%89%E6%A0%91II/" title="数据结构与算法:二叉树的存储结构">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:二叉树的存储结构"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%8F%89%E6%A0%91II/" title="数据结构与算法:二叉树的存储结构">数据结构与算法:二叉树的存储结构</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-12-01 22:01:39"><i class="far fa-calendar-alt"></i>2020-12-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content">本篇博客将讲述二叉树的存储结构以及代码实现的方法~~
+
+二叉树的存储结构二叉树的存储结构主要有顺序存储结构及链式存储结构两种，由于顺序存储结构用的不多，故本博客只记录链式存储结构
+1234typedef struct node&#123;  ElemType data;   struct node *lchild， *rchild;&#125; BTNode;
+
+ 
+二叉树的基本运算本博客二叉树的基本运算方法主要参考武汉大学李春葆老师的《数据结构与算法》这一教材
+创建二叉树算法思想：
+
+用二叉树括号表示串来构建二叉树存储结构
+单个字符: 结点的值
+ ( : 表示存在孩子，默认左子树
+ ) : 表示一棵子树的结束
+ , : 表示一棵右子树的开始
+
+先构造根结点N，再构造左子树L，最后构造右子树R
+
+由于左子树先进行构造，故构造右子树R时，会找不到根结点，所以需要保存N
+
+而结点是按最近原则匹配的，所以使用一个栈保存N 
+
+
+ 
+代码实现：
+123456789101112131415161718192021222324252627282930313233343536373839404142 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">KangKang</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">28</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">20</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">7</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Nomore-name" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">能有三分钟热度，就能有三分钟收获</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2021/05/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="数据结构与算法:哈夫曼树与哈夫曼编码" alt="数据结构与算法:哈夫曼树与哈夫曼编码"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2021/05/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="数据结构与算法:哈夫曼树与哈夫曼编码">数据结构与算法:哈夫曼树与哈夫曼编码</div><time class="aside-post_meta post-meta__date" title="发表于 2021-05-19 12:27:17">2021-05-19</time></div></a></div><div class="aside-recent-post"><a href="/2021/04/11/JavaScript%E5%85%A5%E9%97%A8III-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/JAVASCRIPT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="JavaScript入门III:对象" alt="JavaScript入门III:对象"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2021/04/11/JavaScript%E5%85%A5%E9%97%A8III-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="JavaScript入门III:对象">JavaScript入门III:对象</div><time class="aside-post_meta post-meta__date" title="发表于 2021-04-11 21:57:39">2021-04-11</time></div></a></div><div class="aside-recent-post"><a href="/2021/03/16/JavaScript%E5%85%A5%E9%97%A8II-%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7%E4%B8%8E%E5%87%BD%E6%95%B0/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/JAVASCRIPT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="JavaScript入门II:异常捕获与函数" alt="JavaScript入门II:异常捕获与函数"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2021/03/16/JavaScript%E5%85%A5%E9%97%A8II-%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7%E4%B8%8E%E5%87%BD%E6%95%B0/" title="JavaScript入门II:异常捕获与函数">JavaScript入门II:异常捕获与函数</div><time class="aside-post_meta post-meta__date" title="发表于 2021-03-16 11:57:39">2021-03-16</time></div></a></div><div class="aside-recent-post"><a href="/2021/03/14/JavaScript%E5%85%A5%E9%97%A8I/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/JAVASCRIPT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="JavaScript入门I:变量与数据类型" alt="JavaScript入门I:变量与数据类型"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2021/03/14/JavaScript%E5%85%A5%E9%97%A8I/" title="JavaScript入门I:变量与数据类型">JavaScript入门I:变量与数据类型</div><time class="aside-post_meta post-meta__date" title="发表于 2021-03-14 20:42:41">2021-03-14</time></div></a></div><div class="aside-recent-post"><a href="/2021/02/17/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Dart%E8%AF%AD%E8%A8%80III/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/Dart.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="从零开始学习Dart语言 III:类" alt="从零开始学习Dart语言 III:类"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2021/02/17/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Dart%E8%AF%AD%E8%A8%80III/" title="从零开始学习Dart语言 III:类">从零开始学习Dart语言 III:类</div><time class="aside-post_meta post-meta__date" title="发表于 2021-02-17 22:57:19">2021-02-17</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Dart/"><span class="card-category-list-name">Dart</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaScript/"><span class="card-category-list-name">JavaScript</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OJ%E5%90%88%E9%9B%86/"><span class="card-category-list-name">OJ合集</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%B6%E5%AE%83/"><span class="card-category-list-name">其它</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">数据结构与算法</span><span class="card-category-list-count">9</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/APP/" style="font-size: 20.29px; color: #99a4b4">APP</a> <a href="/tags/C/" style="font-size: 18.57px; color: #99a0a9">C</a> <a href="/tags/C/" style="font-size: 22px; color: #99a9bf">C++</a> <a href="/tags/Dart/" style="font-size: 17.71px; color: #999ea4">Dart</a> <a href="/tags/JavaScript/" style="font-size: 17.71px; color: #999ea4">JavaScript</a> <a href="/tags/OJ/" style="font-size: 16.86px; color: #999b9e">OJ</a> <a href="/tags/Python/" style="font-size: 16px; color: #999">Python</a> <a href="/tags/ReactNative/" style="font-size: 17.71px; color: #999ea4">ReactNative</a> <a href="/tags/STL/" style="font-size: 17.71px; color: #999ea4">STL</a> <a href="/tags/flutter/" style="font-size: 17.71px; color: #999ea4">flutter</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 18.57px; color: #99a0a9">二叉树</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 17.71px; color: #999ea4">前端</a> <a href="/tags/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F/" style="font-size: 17.71px; color: #999ea4">十大排序</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="font-size: 18.57px; color: #99a0a9">基础语法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 16px; color: #999">数据处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 21.14px; color: #99a7ba">数据结构</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.43px; color: #99a2af">树</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 17.71px; color: #999ea4">算法</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 16.86px; color: #999b9e">贪心算法</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 18.57px; color: #99a0a9">面向对象</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">28</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By KangKang</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: "今日事&#44;今日畢,Never put off till tomorrow what you can do today".split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: true,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '今日事&#44;今日畢'
+}</script></body></html>
