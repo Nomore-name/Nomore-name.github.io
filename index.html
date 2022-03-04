@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>K`onnor</title><meta name="description"><meta name="author" content="KangKang"><meta name="copyright" content="KangKang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="K`onnor"><meta property="og:url" content="http://yoursite.com/"><meta property="og:site_name" content="K`onnor"><meta property="og:description"><meta property="og:image" content="http://yoursite.com/img/avatar.png"><meta property="article:published_time" content="2022-03-04T16:18:30.355Z"><meta property="article:modified_time" content="2022-03-04T16:18:30.355Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="K`onnor" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">81</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">54</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 画册</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/photo/bgimg2.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">K`onnor</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 画册</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">K`onnor</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Nomore-name" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="数据结构与算法:哈夫曼树与哈夫曼编码">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:哈夫曼树与哈夫曼编码"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="数据结构与算法:哈夫曼树与哈夫曼编码">数据结构与算法:哈夫曼树与哈夫曼编码</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-03-05 00:08:33"><i class="far fa-calendar-alt"></i>2022-03-05</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content">本篇博客主要讲解哈夫曼树以及哈夫曼编码的基本代码和思路~~
+
+哈夫曼树哈夫曼树的定义在学习哈夫曼树的概念之前，我们先复习一些树的基本概念
+
+路径：若树中存在一个结点序列k1,k2,…,kj，使得ki是ki+1的双亲，则称该结点序列是从k1到kj的一条路径。
+路径长度：等于路径上的结点数减1。
+结点的权：在许多应用中，常常将树中的结点赋予一个有意义的数，称为该结点的权。
+结点的带权路径长度：是指该结点到树根之间的路径长度与该结点上权的乘积。
+树的带权路径长度：树中所有叶子结点的带权路径长度之和
+
+给定N个权值作为N个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。
+哈夫曼树的构建 
+（若看完动图还不理解的同学建议找一些视频看一下，这里用文字不好表述）
+哈夫曼树的特点
+n1 = 0（度数为1的结点个数为0）
+n = n0+n1+n2 = n0+n2 =2n0-1
+
+哈夫曼编码规定哈夫曼树中的左分支为0，右分支为1，则从根结点到每个叶结点所经过的分支对应的0 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/02/15/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93VI/" title="通往游戏之路：UE4蓝图小结VI">     <img class="post_bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通往游戏之路：UE4蓝图小结VI"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/15/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93VI/" title="通往游戏之路：UE4蓝图小结VI">通往游戏之路：UE4蓝图小结VI</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-02-15 09:47:43"><i class="far fa-calendar-alt"></i>2022-02-15</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">欢迎来到UE4蓝图小结第六篇，本篇将总结行为树的实现
+
+什么是行为树在虚幻引擎4（UE4）中，可以用多种不同的方式为角色创建AI。可以使用蓝图脚本来指示角色”执行某种操作”，例如播放动画、移动到特定位置、被物体击中时做出的反应等等。希望AI角色自行思考并自行做出决定时，行为树 便能派上用场。
+行为树与蓝图相似，皆是以一种可视化方式创建，将一系列具备功能的节点添加并连接至行为树图表。执行逻辑时，行为树会使用一种名为 黑板 的独立资源来存储它需要知道的信息（名为 黑板键），从而做出有根据的决策。
+结点行为树由一个个结点组成一个完整的逻辑，分为合成结点和任务结点两种，其中合成结点又有三种基本的结点类型：
+ 
+
+选择器合成节点（Selector）：选择器节点从左到右执行其子项，其中一个子项成功时将停止执行该子项的子项。如果子项成功，则选择器成功。如果选择器的所有子项失败，选择器也将失败。
+序列合成节点（Sequence）：序列节点从左到右执行其子项，其中一个子项失败时将停止执行该子项的子项。如果子项失败，则序列失败。如果所有序列的子项成功，则序列成功。
+简单平行结点（Simple Parall ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/02/14/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93V/" title="通往游戏之路：UE4蓝图小结V">     <img class="post_bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通往游戏之路：UE4蓝图小结V"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/14/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93V/" title="通往游戏之路：UE4蓝图小结V">通往游戏之路：UE4蓝图小结V</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-02-14 09:47:23"><i class="far fa-calendar-alt"></i>2022-02-14</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">欢迎来到UE4蓝图小结第五篇，本篇将总结敌人攻击、敌人血条计算、敌人受伤、位移及死亡动画的实现
+
+敌人攻击我们为敌人分别设置了近战攻击和远程攻击两种方式，首先我们需要定义两个事件来播放动画蒙太奇，用于我们后面在AI行为树中进行调用
+ 
+ 
+近战攻击首先我们到相应的动画蒙太奇中添加两个相应的通知事件，并在敌人的动画蓝图类中进行调用
+ 
+ 
+然后我们在敌人类的相应攻击位置添加碰撞盒（Hand）并设置碰撞逻辑和伤害，这里逻辑和角色类基本相似，故不加以赘述
+ 
+ 
+远程攻击远程攻击的实现相较于近战攻击会稍微复杂一点，不过首先还是要在动画蒙太奇中添加动画通知并进行调用
+ 
+ 
+然后我们还需要新建一个Actor蓝图类，命名为Spell，作为从敌人手中发射出的抛射物，并在该蓝图类中添加如下组件
+ 
+然后我们选择ProjectileMovement，在此为抛射物设置初速度和最大速度
+
+然后我们返回敌人类中编写蓝图脚本，首先在相应攻击位置添加碰撞盒（Dagger）然后在事件SpawnSpell 中调用在位置处生成发射器（Spawn Emitter at Location）用于生成粒子特效
+
+然后在事件D ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/02/13/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93IV/" title="通往游戏之路：UE4蓝图小结IV">     <img class="post_bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通往游戏之路：UE4蓝图小结IV"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/13/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93IV/" title="通往游戏之路：UE4蓝图小结IV">通往游戏之路：UE4蓝图小结IV</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-02-13 19:47:23"><i class="far fa-calendar-alt"></i>2022-02-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">欢迎来到UE4蓝图小结第四篇，本篇将总结角色方向、角色血条UI及计算的实现
+
+角色血条UI由于游戏可操控主角只有一个，所以我们可以直接将UI展示在游戏界面中，而不用像设计敌人UI那样麻烦
+首先我们还是需要先创建一个控件蓝图，用来设计UI的样式（Player UI）
+ 
+选择进度条，在百分比一栏旁选择创建绑定，就会跳到一个蓝图脚本界面
+ 
+我们就可以在这蓝图脚本里编写相应的逻辑，Blood变量代表当前角色血量，Max Blood代表角色总血量
+ 
+我们需要将该UI放在角色类里初始化中进行，同时还有一些其它逻辑需要进行初始化
+ 
+ 
+角色血条计算在处理角色血条计算时，我们需要先准备两个动画蒙太奇，一个是受攻击动画，另一个是死亡动画
+然后我们调用事件任意伤害（Event AnyDamage），首先计算收到攻击后剩余的血量
+ 
+然后我们根据当前血量进行角色当前状态的判断，并进行不同的逻辑处理
+ 
+在设置角色死亡时，要调用销毁组件（DestroyComponent）传入角色胶囊体进行销毁
+角色攻击方向由于我们的角色可能对敌人进行正反两个方向的攻击，所以我们需要判断敌人是面对角色还是背靠角色的，以 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/02/11/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93III/" title="通往游戏之路：UE4蓝图小结III">     <img class="post_bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通往游戏之路：UE4蓝图小结III"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/11/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93III/" title="通往游戏之路：UE4蓝图小结III">通往游戏之路：UE4蓝图小结III</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-02-11 14:33:22"><i class="far fa-calendar-alt"></i>2022-02-11</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">欢迎来到UE4蓝图小结第三篇，本次我们将总结武器碰撞、应用伤害及敌人血条UI的实现
+
+武器碰撞碰撞，是UE4中检测两个物体是否发生接触的判断途径。也是我们检测角色武器是否与敌人发生接触的方法。
+首先我们需要在角色类中网格体下为武器所在的位置添加碰撞盒（weapon），让其基本程度上覆盖武器
+ 
+同时，我们要在攻击的动画蒙太奇中分别添加Eco Weapon和Deco Weapon两个通知，用于修改我们的碰撞状态
+ 
+然后在动画蓝图类中添加通知
+ 
+最后我们回到角色类中的蓝图脚本编写相应的逻辑
+当触发Eco Weapon时，将weapon的碰撞类型（Set Collision Enabled）改成已启用碰撞（查询和物理），触发DecoWeapon时将碰撞类型设为无碰撞
+ 
+这里我们就要简述一下UE4中的碰撞逻辑：
+在UE4中两个物体发生接触会有三种情况：忽略、重叠、和阻挡
+其中忽略和重叠在表现上是相同的，但是，我们若启用了生成重叠事件（Generate Overlap Events），就会可以调用重叠事件，我们的攻击碰撞到敌人的检测就是通过重叠来判断的
+所以我们需要在碰撞盒weapon中进 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/02/09/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93II/" title="通往游戏之路：UE4蓝图小结II">     <img class="post_bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通往游戏之路：UE4蓝图小结II"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/09/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93II/" title="通往游戏之路：UE4蓝图小结II">通往游戏之路：UE4蓝图小结II</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-02-09 12:04:37"><i class="far fa-calendar-alt"></i>2022-02-09</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">欢迎来到UE4蓝图小结第二篇，这一次我们来讲人物攻击的实现
+
+设置动画插槽在UE4中实现攻击动画，我们需要用到播放动画蒙太奇这一功能，而为了使角色能够正常的播放蒙太奇动画，我们需要在动画蓝图中为角色添加动画插槽
+ 
+ 
+设置结构体与表格由于我们要实现动画的连招效果，而为了不使蓝图脚本看起来过于繁琐，我们要用到蓝图中的表格来存储数据（可以理解为数组）
+首先我们要定义一个结构体，包含动画蒙太奇、最高伤害、最低伤害攻击方向四个变量
+
+然后我们创建数据表格，采用我们定义的结构体作为行结构，然后就可以在表中进行赋值
+
+由于我们要在游戏中实现两种攻击形式，所以我们还需要创建一个枚举值分别存放两个不同攻击的的名称，对应表格中的行名，方便我们在蓝图脚本中进行调用
+
+攻击实现首先要讲一下我设计的攻击逻辑，角色分有普通攻击和特殊攻击两种，每种攻击各有四种连击动画，按鼠标左键触发普通攻击，按下左键后再按下右键触发特殊攻击。
+要实现这样的攻击效果，我们需要完成以下几件事：
+
+读取表格攻击数据
+对准角色攻击方向
+连招的逻辑实现
+
+让我们来一一分解：
+读取表格攻击数据我们在角色类蓝图脚本中添加一个自定义事件，用于 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/01/25/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93I/" title="通往游戏之路：UE4蓝图小结I">     <img class="post_bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通往游戏之路：UE4蓝图小结I"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/25/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93I/" title="通往游戏之路：UE4蓝图小结I">通往游戏之路：UE4蓝图小结I</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-01-25 10:35:00"><i class="far fa-calendar-alt"></i>2022-01-25</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">于是乎终于开始了我的游戏设计之路
+之前是一直在前端和游戏两个方向飘忽不定，但在做了一些前端项目后，决心还是重点专研游戏这一方向，也把我的毕业设计题目定成了基于UE4的动作游戏开发，那么就要好好专研了。
+首先第一步就是制作一个动作游戏的Demo，我决定采用纯蓝图完成，以帮助我快速入门虚幻4
+
+蓝图蓝图是虚幻4所提供给开发者的一套强大工具，它具体可分为蓝图类和蓝图脚本
+蓝图类, 一般缩写为 Blueprint(蓝图),是一种允许内容创建者轻松地基于现有游戏性类添加功能的资源。 蓝图*是在虚幻编辑器中可视化地创建的，不需要书写代码，会被作为类保存在内容包中。
+而蓝图脚本则可以理解为是一种脚本语言，它是虚幻4将底层C++封装好后提供给开发者的一种可视化编程工具，这样即便是非程序员也能通过简单的连线来处理游戏的逻辑关系，以达到实现简单的游戏效果。
+人物移动、转向与跳跃创建角色类首先我们要创建一个蓝图类来存放我们的主角，我们在UE4中的内容浏览器里右键选择新建蓝图类，在父类一项我们选择角色
+ 
+之后我们命名并保存，进入该角色类里点击网格体为角色选择一个骨骼并调整相应大小，我这里用的是虚幻商城免费提 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/01/25/%E3%80%8AC-Primer-%E7%AC%AC%E4%BA%94%E7%89%88%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="《C++ Primer 第五版》阅读笔记I:引用、指针与const">     <img class="post_bg" data-src="/photo/CP.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《C++ Primer 第五版》阅读笔记I:引用、指针与const"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/25/%E3%80%8AC-Primer-%E7%AC%AC%E4%BA%94%E7%89%88%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="《C++ Primer 第五版》阅读笔记I:引用、指针与const">《C++ Primer 第五版》阅读笔记I:引用、指针与const</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-01-25 10:34:02"><i class="far fa-calendar-alt"></i>2022-01-25</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/C/">C++</a></span></div><div class="content">大学里除了在课堂上接触专业的书外，就很少在课堂下阅读与专业有关的书了。有很多经典计算机书籍都没有去看，其实想来是蛮错误的一件事，所以就趁这这个寒假读了读《C++ Primer 第五版》，正好也为我C++的开发巩固些基础。
+
+引用定义：引用为对象齐了另外一个名字，通常将声明符写成&amp;n的形式来定义引用类型，n是声明的变量名。定义引用时，程序把引用和它的初始值绑定在一起，而不是将初始值拷贝给引用。
+Eg.
+123int i=1024;int &amp;r=i;		//r是一个应用，与i绑定在一起cout&lt;&lt;r;		//结果为1024
+注意事项
+引用类型的初始值必须是一个对象
+引用必须要初始化
+
+指针定义指针是指向另外一种类型的符合类型，与引用相似，指针也实现了对其他对象的间接访问。定义指针类型的方法将声明符写成d的形式，其中d为变量名。指针用于存放某个对象的地址，获取该地址时，我们要用取地址符&amp;（注意不要和引用声明混淆）如果指针指向了一个对象，则允许使用解引用符 （注意不要和指针声明混淆） 来访问对象。
+Eg.
+12345678int main()&#123;	i ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/01/17/%E7%AE%97%E6%B3%95II-%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%9F%A5%E6%89%BE%E7%9A%84%E5%BA%94%E7%94%A8/" title="算法II:排序与查找的应用">     <img class="post_bg" data-src="/photo/SF.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法II:排序与查找的应用"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/17/%E7%AE%97%E6%B3%95II-%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%9F%A5%E6%89%BE%E7%9A%84%E5%BA%94%E7%94%A8/" title="算法II:排序与查找的应用">算法II:排序与查找的应用</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-01-17 11:39:54"><i class="far fa-calendar-alt"></i>2022-01-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">本篇博客将讲述在数据结构中学过的一些排序与查找的具体应用，以及STL中sort的用法讲解，具体内容往下看吧
+
+sort的用法一般在解决实际问题的时候，我们很少再去自己写一个排序算法进行调用，因为像很多语言都已经封装好了排序函数让我们直接进行调用，就比如C++中里的sort函数
+sort(first,last,comp)函数有三个参数: first和 last为待排序序列的起始地址和结束地址;cmp为排序方式，可以不填写,不填写时默认为升序方式。
+sort函数的基本应用我们自不多讲，这里主要讲一下如何应用sort函数里的cmp来进行自定义的排序
+成绩排序题目:
+用一维数组存储学号和成绩,然后按成绩排序输出。
+输入:
+输入的第一行中包括一个整数N（1≤N≤100)，它代表学生的个数。
+接下来的N行中,每行包括两个整数p和q，分别代表每个学生的学号和成绩。
+输出:
+按照学生的成绩从小到大进行排序,并将排序后的学生信息打印出来。如果学生的成绩相同，那么按照学号的大小从小到大排序。
+样例输入:3
+1 90
+2 87
+3 92
+样例输出:
+2 87
+1 90
+3 92
+思想：
+本题需要定义一个结构 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/01/09/%E7%AE%97%E6%B3%95I-%E6%9A%B4%E5%8A%9B%E6%B1%82%E8%A7%A3/" title="算法I:暴力算法">     <img class="post_bg" data-src="/photo/SF.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法I:暴力算法"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/09/%E7%AE%97%E6%B3%95I-%E6%9A%B4%E5%8A%9B%E6%B1%82%E8%A7%A3/" title="算法I:暴力算法">算法I:暴力算法</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-01-09 20:55:15"><i class="far fa-calendar-alt"></i>2022-01-09</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">考研结束了，专业也结课了，好像一切时间都回到了自己手上，却也知道我的大学生涯只剩下最后六个月了。
+给自己放了两周假，又要投入忙碌的学习中去了。接下来的学习主要有两个主要目的，一个是春招，一个就是毕业设计了。
+考研错过了秋招的各种机遇，需要更加认真的准备一下春招的事，而毕业设计终于开始了我游戏设计的第一步。
+任务还是挺繁重的
+一步一步来吧
+路漫漫其修远兮，吾将上下而求索
+
+计算机面试或笔试的时候，算法必是躲不掉的一关，这个系列的博客我将汇总一些比较常见的计算机算法思想，然后并配上几道例题加以说明。
+暴力算法是我们在面对题目最容易想到的算法，虽然简单粗暴，但往往行之有效，暴力算法最常用的就是用枚举解决问题。
+Eg.
+ABC题目：
+设a,b,c均是0到9之间的数字，abc,bcc是两个三位数，且有abc+ bcc=532。
+求满足条件的所有 a,b,c的值。
+输入：题目没有任何输入。
+输出：
+请输出所有满足题目条件的a,b,c的值。
+a,b,c之间用空格隔开。
+每个输出占一行。
+思想：
+0-9三重遍历，找到a*100+b*10+c+b*100+c*10+c==532进行输出即可
+代码：
+12 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">KangKang</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">81</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">54</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">12</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Nomore-name" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">能有三分钟热度，就能有三分钟收获</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2022/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="数据结构与算法:哈夫曼树与哈夫曼编码" alt="数据结构与算法:哈夫曼树与哈夫曼编码"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="数据结构与算法:哈夫曼树与哈夫曼编码">数据结构与算法:哈夫曼树与哈夫曼编码</div><time class="aside-post_meta post-meta__date" title="发表于 2022-03-05 00:08:33">2022-03-05</time></div></a></div><div class="aside-recent-post"><a href="/2022/02/15/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93VI/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="通往游戏之路：UE4蓝图小结VI" alt="通往游戏之路：UE4蓝图小结VI"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/02/15/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93VI/" title="通往游戏之路：UE4蓝图小结VI">通往游戏之路：UE4蓝图小结VI</div><time class="aside-post_meta post-meta__date" title="发表于 2022-02-15 09:47:43">2022-02-15</time></div></a></div><div class="aside-recent-post"><a href="/2022/02/14/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93V/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="通往游戏之路：UE4蓝图小结V" alt="通往游戏之路：UE4蓝图小结V"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/02/14/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93V/" title="通往游戏之路：UE4蓝图小结V">通往游戏之路：UE4蓝图小结V</div><time class="aside-post_meta post-meta__date" title="发表于 2022-02-14 09:47:23">2022-02-14</time></div></a></div><div class="aside-recent-post"><a href="/2022/02/13/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93IV/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="通往游戏之路：UE4蓝图小结IV" alt="通往游戏之路：UE4蓝图小结IV"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/02/13/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93IV/" title="通往游戏之路：UE4蓝图小结IV">通往游戏之路：UE4蓝图小结IV</div><time class="aside-post_meta post-meta__date" title="发表于 2022-02-13 19:47:23">2022-02-13</time></div></a></div><div class="aside-recent-post"><a href="/2022/02/11/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93III/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="通往游戏之路：UE4蓝图小结III" alt="通往游戏之路：UE4蓝图小结III"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/02/11/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93III/" title="通往游戏之路：UE4蓝图小结III">通往游戏之路：UE4蓝图小结III</div><time class="aside-post_meta post-meta__date" title="发表于 2022-02-11 14:33:22">2022-02-11</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Dart/"><span class="card-category-list-name">Dart</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML%E4%B8%8ECSS/"><span class="card-category-list-name">HTML与CSS</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaScript/"><span class="card-category-list-name">JavaScript</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OJ%E5%90%88%E9%9B%86/"><span class="card-category-list-name">OJ合集</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%B6%E5%AE%83/"><span class="card-category-list-name">其它</span><span class="card-category-list-count">1</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/APP/" style="font-size: 18.18px; color: #999fa7">APP</a> <a href="/tags/BOM/" style="font-size: 16px; color: #999">BOM</a> <a href="/tags/C/" style="font-size: 17.64px; color: #999da3">C</a> <a href="/tags/C/" style="font-size: 22px; color: #99a9bf">C++</a> <a href="/tags/CSS/" style="font-size: 20.36px; color: #99a5b5">CSS</a> <a href="/tags/DOM/" style="font-size: 16px; color: #999">DOM</a> <a href="/tags/Dart/" style="font-size: 17.09px; color: #999ca0">Dart</a> <a href="/tags/ECMAScript6/" style="font-size: 16.55px; color: #999a9c">ECMAScript6</a> <a href="/tags/HTML/" style="font-size: 20.36px; color: #99a5b5">HTML</a> <a href="/tags/JavaScript/" style="font-size: 19.82px; color: #99a3b1">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px; color: #999">Linux</a> <a href="/tags/MySql/" style="font-size: 16px; color: #999">MySql</a> <a href="/tags/OJ/" style="font-size: 16.55px; color: #999a9c">OJ</a> <a href="/tags/Python/" style="font-size: 16px; color: #999">Python</a> <a href="/tags/ReactNative/" style="font-size: 18.18px; color: #999fa7">ReactNative</a> <a href="/tags/STL/" style="font-size: 17.64px; color: #999da3">STL</a> <a href="/tags/UE4/" style="font-size: 18.73px; color: #99a0aa">UE4</a> <a href="/tags/Vue-js/" style="font-size: 16.55px; color: #999a9c">Vue.js</a> <a href="/tags/flutter/" style="font-size: 17.09px; color: #999ca0">flutter</a> <a href="/tags/%E4%BA%8B%E4%BB%B6/" style="font-size: 16px; color: #999">事件</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 17.64px; color: #999da3">二叉树</a> <a href="/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" style="font-size: 16px; color: #999">关键路径</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20.91px; color: #99a6b8">前端</a> <a href="/tags/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F/" style="font-size: 17.09px; color: #999ca0">十大排序</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 16px; color: #999">哈希表</a> <a href="/tags/%E5%9B%BE/" style="font-size: 19.27px; color: #99a2ae">图</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="font-size: 17.64px; color: #999da3">基础语法</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 16px; color: #999">并查集</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 16px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%87%E9%92%88/" style="font-size: 16px; color: #999">指针</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 16px; color: #999">数据处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16px; color: #999">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 21.45px; color: #99a8bc">数据结构</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 16px; color: #999">时间复杂度</a> <a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" style="font-size: 16px; color: #999">最小生成树</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 16.55px; color: #999a9c">最短路径</a> <a href="/tags/%E6%9F%A5%E6%89%BE/" style="font-size: 16px; color: #999">查找</a> <a href="/tags/%E6%A0%88/" style="font-size: 17.64px; color: #999da3">栈</a> <a href="/tags/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/" style="font-size: 16.55px; color: #999a9c">栈的应用</a> <a href="/tags/%E6%A0%91/" style="font-size: 18.18px; color: #999fa7">树</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">81</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By KangKang</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: "今日事&#44;今日畢,Never put off till tomorrow what you can do today".split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: true,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '今日事&#44;今日畢'
+}</script></body></html>

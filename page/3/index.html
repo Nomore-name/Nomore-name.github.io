@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>K`onnor</title><meta name="description"><meta name="author" content="KangKang"><meta name="copyright" content="KangKang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/page/3/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="K`onnor"><meta property="og:url" content="http://yoursite.com/page/3/"><meta property="og:site_name" content="K`onnor"><meta property="og:description"><meta property="og:image" content="http://yoursite.com/img/avatar.png"><meta property="article:published_time" content="2022-03-04T16:18:30.395Z"><meta property="article:modified_time" content="2022-03-04T16:18:30.395Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="K`onnor" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">81</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">54</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 画册</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/photo/bgimg2.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">K`onnor</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 画册</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">K`onnor</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Nomore-name" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/09/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%9B%BEIV-%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95/" title="数据结构与算法:图IV-迪杰斯特拉算法">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:图IV-迪杰斯特拉算法"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%9B%BEIV-%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95/" title="数据结构与算法:图IV-迪杰斯特拉算法">数据结构与算法:图IV-迪杰斯特拉算法</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-09-05 21:34:40"><i class="far fa-calendar-alt"></i>2021-09-05</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content">接下来要讲的就是图的最短路径问题，由于图的两个最短路径算法都是重要且难以理解的算法，故各安排一篇进行阐述
+
+迪杰斯特拉（Dijkstra）算法基本思想迪杰斯特拉算法用于求单源最短路径（即给定某一点，求得该点到图中剩余所有结点的最短路径）该算法思想和普里姆算法有类似之处，都是每次选择最短的路径，并更新其它结点的路径信息，最后生成到各个结点的最短路径。文字描述总是那么抽象，所以我们用图解说话：
+ 
+代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;iostream& ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/09/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%9B%BEIII-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" title="数据结构与算法:图III-最小生成树">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:图III-最小生成树"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%9B%BEIII-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" title="数据结构与算法:图III-最小生成树">数据结构与算法:图III-最小生成树</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-09-02 21:49:04"><i class="far fa-calendar-alt"></i>2021-09-02</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content">本篇博客记录的是图的两种最小生成树的思想和实现方法
+
+克鲁斯卡尔（Kruskal）算法并查集在讲克鲁斯卡尔算法之前我们需要补充一个树的概念——并查集
+所谓并查集，就是用数组集合来表示树。其中下标就代表结点，而所对应的值就是双亲结点，若下标和值相同说明该结点为根结点，如下图所示。
+ 
+克鲁斯卡尔算法基本思想为什么要讲并查集呢，这个就和克鲁斯卡尔算法的思想有关。克鲁斯卡尔算法是将图中的所有边按权值从小到大排序，每次选择最小的边作为生成树的一个新分支，直到所有的边都检测完了为止。而其中为了防止出现回路我们就需要用到并查集来判断他们的根是否相同，若不同才并入最小生成树里，该算法适合稀疏图，下面是过程分解:
+ 
+普里姆（Prim）算法普里姆算法的思想是先任意取得一个结点，将其当成一棵树，然后将从与这棵树相接的边中选出一条权值最小的边加入该树，不断重复上述过程，知道所有的顶点都在树中为止，该算法适合稠密图下面是过程分解:
+ 
+代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%9B%BEII-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" title="数据结构与算法:图II-图的遍历">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:图II-图的遍历"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%9B%BEII-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" title="数据结构与算法:图II-图的遍历">数据结构与算法:图II-图的遍历</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-31 20:09:10"><i class="far fa-calendar-alt"></i>2021-08-31</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content">本篇博客讲的是图的两种遍历方式
+
+深度优先遍历假设初始状态是图中所有顶点均未被访问，则从某个顶点v出发，首先访问该顶点，然后依次从它的各个未被访问的邻接点出发深度优先搜索遍历图，直至图中所有和v有路径相通的顶点都被访问到。若此时尚有其他顶点未被访问到，则另选一个未被访问的顶点作起始点，重复上述过程，直至图中所有顶点都被访问到为止。
+很抽象吧，这是严蔚敏版教材上给的定义，通俗来讲，深度优先遍历的思想就是”来到一个分叉口，先选择一条路走到黑，走完了再返回去分叉口选择另一条路走到黑，直到走遍所有路为止“是不是形象了许多，深度优先遍历实际上就是一个递归的过程，下面是我自己画的图解。
+ 
+如果还不能理解建议找一些GIF或视频看看噢
+广度优先遍历从图中某顶点v出发，在访问了v之后依次访问v的各个未曾访问过的邻接点，然后分别从这些邻接点出发依次访问它们的邻接点，并使得“先被访问的顶点的邻接点先于后被访问的顶点的邻接点被访问，直至图中所有已被访问的顶点的邻接点都被访问到。如果此时图中尚有顶点未被访问，则需要另选一个未曾被访问过的顶点作为新的起始点，重复上述过程，直至图中所有顶点都被访问到为止。
+同样的 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/31/HTML%E4%B8%8ECSS-XI-grid%E5%B8%83%E5%B1%80/" title="HTML与CSS XI:grid布局">     <img class="post_bg" data-src="/photo/HTMLCSS.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML与CSS XI:grid布局"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/31/HTML%E4%B8%8ECSS-XI-grid%E5%B8%83%E5%B1%80/" title="HTML与CSS XI:grid布局">HTML与CSS XI:grid布局</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-31 20:08:40"><i class="far fa-calendar-alt"></i>2021-08-31</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML%E4%B8%8ECSS/">HTML与CSS</a></span></div><div class="content">本篇博客将讲述grid布局，同时也是作为HTML与CSS系列博客的最后一篇
+
+Grid布局的基本概念Grid布局将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局，因此我们也称它为网格布局
+与Flex布局相同的是，Grid布局同样具有容器和项目两个概念
+将元素设置为 display:grid;元素会变为一个flex容器，容器内部的元素我们称为grid项目。
+Grid布局下通过网格线划分，n行有n + 1根水平网格线，m列有m + 1根垂直网格线
+
+Grid布局的基本应用基本样式1234567891011121314151617181920212223242526272829303132333435&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;    &lt;meta name="viewport" content="wi ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/30/HTML%E4%B8%8ECSS-X-flex%E5%B8%83%E5%B1%80/" title="HTML与CSS X:flex布局">     <img class="post_bg" data-src="/photo/HTMLCSS.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML与CSS X:flex布局"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/30/HTML%E4%B8%8ECSS-X-flex%E5%B8%83%E5%B1%80/" title="HTML与CSS X:flex布局">HTML与CSS X:flex布局</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-30 19:01:51"><i class="far fa-calendar-alt"></i>2021-08-30</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML%E4%B8%8ECSS/">HTML与CSS</a></span></div><div class="content">本篇博客将讲述flex布局，flex布局是CSS3中新增的一个布局方式，它比起float布局更容易上手，常用于不考虑向低版本IE浏览器兼容时写复杂界面时使用。
+
+Flex布局的基本概念将元素设置为 display:flex;元素会变为一个flex容器，容器内部的元素我们称为flex元素或者叫flex项目。
+flex容器和元素里各有主轴和交叉轴两个概念，如下图所示，具体如何使用用我们后面会说。
+
+Flex布局的基本应用默认样式1234567891011121314151617181920212223242526272829&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;    &lt ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%9B%BEI-%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="数据结构与算法:图I-图的基本操作">     <img class="post_bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法:图I-图的基本操作"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%9B%BEI-%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="数据结构与算法:图I-图的基本操作">数据结构与算法:图I-图的基本操作</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-26 22:03:52"><i class="far fa-calendar-alt"></i>2021-08-26</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></span></div><div class="content">终于，我们迎来了数据结构中最难理解也是内容最多的一个章节——图
+图的各种花里胡哨的操作以及各种令人头大的代码是让许多初学者都头痛不已，这也包括当时的我
+话不多说，现在就开始进入图的学习吧
+
+图的基本概念图的基本概念和专业术语可以说是数据结构中最多的了，很多书本或博客都进行了很好的整理，我这里就不在花时间赘述，大家可自行查阅相关资料进行学习
+图的存储结构图的存储结构有多种方式，但主要有以下两种
+邻接矩阵邻接矩阵是图的顺序存储结构，采用一维数组里存放顶点信息，用二维数组存放图中边的信息，其存储结构定义如下
+12345typedef struct&#123;    char Vex[Maxsize];		//顶点数据，可修改为自己使用的类型    int Edge[Maxsize][Maxsize];		//边之间的关系    int v,e;		//当前矩阵的顶点数和弧数&#125;Mgraph
+对于不带权值的图来说，我们一般用1来表示两个边有关联，用0表示两个边没有相连。而对于带权图来说，我们通常用权值表示两条边相连，用无穷表示两边没有相连。
+邻接表邻接表是图的链式存储结构，邻接表就是对 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/21/HTML%E4%B8%8ECSS-IX-%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" title="HTML与CSS IX:动画效果">     <img class="post_bg" data-src="/photo/HTMLCSS.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML与CSS IX:动画效果"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/21/HTML%E4%B8%8ECSS-IX-%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" title="HTML与CSS IX:动画效果">HTML与CSS IX:动画效果</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-21 21:17:48"><i class="far fa-calendar-alt"></i>2021-08-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML%E4%B8%8ECSS/">HTML与CSS</a></span></div><div class="content">本篇博客讲述CSS3中简单动画效果的实现
+
+动画属性animation：
+
+animation - name：规定需要绑定到选择器的 keyframe名称
+
+animation -duration：规定完成动画所花费的时间,以秒或亳秒计
+
+animation-timing-function：规定动画的速度曲线函数
+
+animation-delay：规定在动画开始之前的延迟
+
+animation- iteration- count：规定动画应该播放的次数（infinite为无限次）
+
+animation：关键帧  时间  函数  延迟  次数
+
+关键帧keframes：
+@keyframes 动画名称{        百分比%{
+​        }
+}
+Eg.
+12345678910111213141516171819202122232425262728293031323334353637383940414243&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/19/HTML%E4%B8%8ECSS-VIII-%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C%E4%B8%8Eoverflow/" title="HTML与CSS VIII:过渡效果与溢出">     <img class="post_bg" data-src="/photo/HTMLCSS.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML与CSS VIII:过渡效果与溢出"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/19/HTML%E4%B8%8ECSS-VIII-%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C%E4%B8%8Eoverflow/" title="HTML与CSS VIII:过渡效果与溢出">HTML与CSS VIII:过渡效果与溢出</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-19 20:33:52"><i class="far fa-calendar-alt"></i>2021-08-19</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML%E4%B8%8ECSS/">HTML与CSS</a></span></div><div class="content">本节主要及讲解CSS3中的过渡效果及一些常见动画形式的实现
+
+过渡函数我们常常用CSS来实现一些动画效果，为了避免让动画过于生硬，我们就需要用到过渡属性
+transition：
+
+transition-property：需要过渡的属性(例如 transform)
+transition-duration：过渡持续时间(例如1s)
+transition-timing-function：过渡函数
+transition-delay：过渡延迟时间
+transition: 属性  秒数  函数  延迟（合并写法）
+
+其中常用过渡函数有：
+
+ease：开始和结束慢，中间快，默认值
+linear：匀速
+ease-in：开始慢
+ease-out：结束慢
+ease-in-out：和ease类似,但比ease幅度大
+
+溢出overflow 属性指定在元素的内容太大而无法放入指定区域时是剪裁内容还是添加滚动条。
+overflow 属性可设置以下值：
+
+visible - 默认。溢出没有被剪裁。内容在元素框外渲染
+hidden - 溢出被剪裁，其余内容将不可见
+scroll - 溢出被剪裁，同时添加滚动条以查看 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/18/HTML%E4%B8%8ECSS-VII-HTML5%E5%8F%8ACSS3%E7%9A%84%E9%83%A8%E5%88%86%E6%96%B0%E6%A0%87%E7%AD%BE/" title="HTML与CSS VII:语义化标签、媒体元素、圆角、阴影与形变">     <img class="post_bg" data-src="/photo/HTMLCSS.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML与CSS VII:语义化标签、媒体元素、圆角、阴影与形变"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/18/HTML%E4%B8%8ECSS-VII-HTML5%E5%8F%8ACSS3%E7%9A%84%E9%83%A8%E5%88%86%E6%96%B0%E6%A0%87%E7%AD%BE/" title="HTML与CSS VII:语义化标签、媒体元素、圆角、阴影与形变">HTML与CSS VII:语义化标签、媒体元素、圆角、阴影与形变</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-18 19:55:52"><i class="far fa-calendar-alt"></i>2021-08-18</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML%E4%B8%8ECSS/">HTML与CSS</a></span></div><div class="content">本篇博客我们讲述HTML5中常用的部分新标签及CSS3中一些常用的新属性
+
+语义化标签语义化标签本质上还是个div，只不过通过语义化法方式能让代码更加规范，也能让阅读代码的人更加一目了然
+
+header：网页头部
+nav：导航栏
+aside：侧标栏
+article：显示文章
+section：布局的一部分
+footer：网页页脚
+
+媒体元素
+audio：音频
+video：视频
+
+对于媒体元素我们有以下三个常用的控制属性：controls-显示控制面板、autoplay-视频自动播放、muted-静音
+圆角边框与阴影
+border-radius：圆角属性
+
+若后面有四个参数，分别是左上、右上、右下、左下(顺时针)
+若后面有两个参数，第一个值表示左上和右下，第二个值表示右上和左下
+若后面仅有一个参数，则表示四个角
+
+box-shadow：阴影
+
+后接参数分别表示：x轴偏移量、y轴偏移量、模糊半径、阴影颜色(不设置颜色为黑色)
+Eg.
+123456789101112131415161718192021222324252627282930313233343536373839404142&lt;! ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/17/HTML%E4%B8%8ECSS-VI-%E5%AE%9A%E4%BD%8D/" title="HTML与CSS VI:定位">     <img class="post_bg" data-src="/photo/HTMLCSS.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML与CSS VI:定位"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/17/HTML%E4%B8%8ECSS-VI-%E5%AE%9A%E4%BD%8D/" title="HTML与CSS VI:定位">HTML与CSS VI:定位</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-17 19:57:18"><i class="far fa-calendar-alt"></i>2021-08-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML%E4%B8%8ECSS/">HTML与CSS</a></span></div><div class="content">本篇博客讲述的是CSS中绝对定位，相对定位和固定定位的内容
+
+CSS定位css可以给元素设置三种不同的定位效果，分别是
+
+绝对定位: absolute
+相对定位: relative
+固定定位:fixed
+
+设置定位后，我们可以给元素添加坐标属性(非定位元素不起作用)：top, left, right, bottom, z-index
+绝对定位绝对定位的特点是它会脱离文档流，默认参照物为浏览器视窗的左上角
+Eg.
+12345678910111213141516171819202122232425&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;    &lt;title&gt;Docu ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">KangKang</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">81</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">54</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">12</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Nomore-name" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">能有三分钟热度，就能有三分钟收获</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2022/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/sg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="数据结构与算法:哈夫曼树与哈夫曼编码" alt="数据结构与算法:哈夫曼树与哈夫曼编码"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%B8%8E%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="数据结构与算法:哈夫曼树与哈夫曼编码">数据结构与算法:哈夫曼树与哈夫曼编码</div><time class="aside-post_meta post-meta__date" title="发表于 2022-03-05 00:08:33">2022-03-05</time></div></a></div><div class="aside-recent-post"><a href="/2022/02/15/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93VI/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="通往游戏之路：UE4蓝图小结VI" alt="通往游戏之路：UE4蓝图小结VI"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/02/15/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93VI/" title="通往游戏之路：UE4蓝图小结VI">通往游戏之路：UE4蓝图小结VI</div><time class="aside-post_meta post-meta__date" title="发表于 2022-02-15 09:47:43">2022-02-15</time></div></a></div><div class="aside-recent-post"><a href="/2022/02/14/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93V/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="通往游戏之路：UE4蓝图小结V" alt="通往游戏之路：UE4蓝图小结V"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/02/14/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93V/" title="通往游戏之路：UE4蓝图小结V">通往游戏之路：UE4蓝图小结V</div><time class="aside-post_meta post-meta__date" title="发表于 2022-02-14 09:47:23">2022-02-14</time></div></a></div><div class="aside-recent-post"><a href="/2022/02/13/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93IV/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="通往游戏之路：UE4蓝图小结IV" alt="通往游戏之路：UE4蓝图小结IV"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/02/13/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93IV/" title="通往游戏之路：UE4蓝图小结IV">通往游戏之路：UE4蓝图小结IV</div><time class="aside-post_meta post-meta__date" title="发表于 2022-02-13 19:47:23">2022-02-13</time></div></a></div><div class="aside-recent-post"><a href="/2022/02/11/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93III/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/photo/UE4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="通往游戏之路：UE4蓝图小结III" alt="通往游戏之路：UE4蓝图小结III"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2022/02/11/%E9%80%9A%E5%BE%80%E6%B8%B8%E6%88%8F%E4%B9%8B%E8%B7%AF%EF%BC%9AUE4%E8%93%9D%E5%9B%BE%E5%B0%8F%E7%BB%93III/" title="通往游戏之路：UE4蓝图小结III">通往游戏之路：UE4蓝图小结III</div><time class="aside-post_meta post-meta__date" title="发表于 2022-02-11 14:33:22">2022-02-11</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Dart/"><span class="card-category-list-name">Dart</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML%E4%B8%8ECSS/"><span class="card-category-list-name">HTML与CSS</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaScript/"><span class="card-category-list-name">JavaScript</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OJ%E5%90%88%E9%9B%86/"><span class="card-category-list-name">OJ合集</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%B6%E5%AE%83/"><span class="card-category-list-name">其它</span><span class="card-category-list-count">1</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/APP/" style="font-size: 18.18px; color: #999fa7">APP</a> <a href="/tags/BOM/" style="font-size: 16px; color: #999">BOM</a> <a href="/tags/C/" style="font-size: 17.64px; color: #999da3">C</a> <a href="/tags/C/" style="font-size: 22px; color: #99a9bf">C++</a> <a href="/tags/CSS/" style="font-size: 20.36px; color: #99a5b5">CSS</a> <a href="/tags/DOM/" style="font-size: 16px; color: #999">DOM</a> <a href="/tags/Dart/" style="font-size: 17.09px; color: #999ca0">Dart</a> <a href="/tags/ECMAScript6/" style="font-size: 16.55px; color: #999a9c">ECMAScript6</a> <a href="/tags/HTML/" style="font-size: 20.36px; color: #99a5b5">HTML</a> <a href="/tags/JavaScript/" style="font-size: 19.82px; color: #99a3b1">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px; color: #999">Linux</a> <a href="/tags/MySql/" style="font-size: 16px; color: #999">MySql</a> <a href="/tags/OJ/" style="font-size: 16.55px; color: #999a9c">OJ</a> <a href="/tags/Python/" style="font-size: 16px; color: #999">Python</a> <a href="/tags/ReactNative/" style="font-size: 18.18px; color: #999fa7">ReactNative</a> <a href="/tags/STL/" style="font-size: 17.64px; color: #999da3">STL</a> <a href="/tags/UE4/" style="font-size: 18.73px; color: #99a0aa">UE4</a> <a href="/tags/Vue-js/" style="font-size: 16.55px; color: #999a9c">Vue.js</a> <a href="/tags/flutter/" style="font-size: 17.09px; color: #999ca0">flutter</a> <a href="/tags/%E4%BA%8B%E4%BB%B6/" style="font-size: 16px; color: #999">事件</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 17.64px; color: #999da3">二叉树</a> <a href="/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" style="font-size: 16px; color: #999">关键路径</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20.91px; color: #99a6b8">前端</a> <a href="/tags/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F/" style="font-size: 17.09px; color: #999ca0">十大排序</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 16px; color: #999">哈希表</a> <a href="/tags/%E5%9B%BE/" style="font-size: 19.27px; color: #99a2ae">图</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="font-size: 17.64px; color: #999da3">基础语法</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 16px; color: #999">并查集</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 16px; color: #999">拓扑排序</a> <a href="/tags/%E6%8C%87%E9%92%88/" style="font-size: 16px; color: #999">指针</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 16px; color: #999">数据处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16px; color: #999">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 21.45px; color: #99a8bc">数据结构</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 16px; color: #999">时间复杂度</a> <a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" style="font-size: 16px; color: #999">最小生成树</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" style="font-size: 16.55px; color: #999a9c">最短路径</a> <a href="/tags/%E6%9F%A5%E6%89%BE/" style="font-size: 16px; color: #999">查找</a> <a href="/tags/%E6%A0%88/" style="font-size: 17.64px; color: #999da3">栈</a> <a href="/tags/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/" style="font-size: 16.55px; color: #999a9c">栈的应用</a> <a href="/tags/%E6%A0%91/" style="font-size: 18.18px; color: #999fa7">树</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">81</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By KangKang</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: "今日事&#44;今日畢,Never put off till tomorrow what you can do today".split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: true,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '今日事&#44;今日畢'
+}</script></body></html>
