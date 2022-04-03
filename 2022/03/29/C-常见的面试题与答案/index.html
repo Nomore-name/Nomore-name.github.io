@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++常见的面试题与答案 | K`onnor</title><meta name="description" content="后悔没早点积累一些面试的经验，导致一下子挂了两个公司的技术面 亡羊补牢，为时不晚，赶紧整理一波面试中常见的问题  static和const的区别static用于改变生命周期或作用域，有以下几种特性：  static+局部变量 将一个变量声明为函数的局部变量，那么这个局部变量在函数执行完成之后不会被释放，而是继续保存在内存中 static+全局变量 表示一个变量在当前文件的全局可访问 static+"><meta name="keywords" content="C++,面试"><meta name="author" content="KangKang"><meta name="copyright" content="KangKang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/2022/03/29/C-%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%8E%E7%AD%94%E6%A1%88/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="C++常见的面试题与答案"><meta property="og:url" content="http://yoursite.com/2022/03/29/C-%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%8E%E7%AD%94%E6%A1%88/"><meta property="og:site_name" content="K`onnor"><meta property="og:description" content="后悔没早点积累一些面试的经验，导致一下子挂了两个公司的技术面 亡羊补牢，为时不晚，赶紧整理一波面试中常见的问题  static和const的区别static用于改变生命周期或作用域，有以下几种特性：  static+局部变量 将一个变量声明为函数的局部变量，那么这个局部变量在函数执行完成之后不会被释放，而是继续保存在内存中 static+全局变量 表示一个变量在当前文件的全局可访问 static+"><meta property="og:image" content="http://yoursite.com/photo/MSBD.png"><meta property="article:published_time" content="2022-03-29T02:47:06.000Z"><meta property="article:modified_time" content="2022-04-03T03:30:19.734Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="数据结构与计算机网络的常见面试题" href="http://yoursite.com/2022/03/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/"><link rel="next" title="C++中的移动语义" href="http://yoursite.com/2022/03/26/C-%E4%B8%AD%E7%9A%84%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="K`onnor" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">89</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">70</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 画册</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#static和const的区别"><span class="toc-number">1.</span> <span class="toc-text">static和const的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数指针、指针函数、常量指针、指针常量、常量引用的概念"><span class="toc-number">2.</span> <span class="toc-text">函数指针、指针函数、常量指针、指针常量、常量引用的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指针和引用的区别"><span class="toc-number">3.</span> <span class="toc-text">指针和引用的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是野指针，指针越界，悬挂指针？"><span class="toc-number">4.</span> <span class="toc-text">什么是野指针，指针越界，悬挂指针？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#宏（-define）和内联函数（inline）的理解以及区别"><span class="toc-number">5.</span> <span class="toc-text">宏（#define）和内联函数（inline）的理解以及区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-的智能指针"><span class="toc-number">6.</span> <span class="toc-text">C++的智能指针</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#堆和栈的区别"><span class="toc-number">7.</span> <span class="toc-text">堆和栈的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是多态？"><span class="toc-number">8.</span> <span class="toc-text">什么是多态？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么构造函数不能为虚函数？"><span class="toc-number">9.</span> <span class="toc-text">为什么构造函数不能为虚函数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解释什么是动态编译，什么是静态编译？"><span class="toc-number">10.</span> <span class="toc-text">解释什么是动态编译，什么是静态编译？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是虚函数与虚表？"><span class="toc-number">11.</span> <span class="toc-text">什么是虚函数与虚表？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是虚指针？"><span class="toc-number">12.</span> <span class="toc-text">什么是虚指针？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基类指针指向派生类的对象，会出现什么情况？"><span class="toc-number">13.</span> <span class="toc-text">基类指针指向派生类的对象，会出现什么情况？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#new和malloc的区别"><span class="toc-number">14.</span> <span class="toc-text">new和malloc的区别?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#delete和delete-的用法，使用不当为什么会造成那些现象？原理是什么？"><span class="toc-number">15.</span> <span class="toc-text">delete和delete[]的用法，使用不当为什么会造成那些现象？原理是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是内存池？"><span class="toc-number">16.</span> <span class="toc-text">什么是内存池？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#struct和class的区别"><span class="toc-number">17.</span> <span class="toc-text">struct和class的区别?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#STL是什么？"><span class="toc-number">18.</span> <span class="toc-text">STL是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#STL容器的简单介绍"><span class="toc-number">19.</span> <span class="toc-text">STL容器的简单介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#STL中的迭代器有哪些？"><span class="toc-number">20.</span> <span class="toc-text">STL中的迭代器有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#STL中的sort使用了什么排序"><span class="toc-number">21.</span> <span class="toc-text">STL中的sort使用了什么排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vector的底层原理"><span class="toc-number">22.</span> <span class="toc-text">vector的底层原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vector的元素类型可以是引用吗？"><span class="toc-number">23.</span> <span class="toc-text">vector的元素类型可以是引用吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#list的底层原理"><span class="toc-number">24.</span> <span class="toc-text">list的底层原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#deque的底层原理"><span class="toc-number">25.</span> <span class="toc-text">deque的底层原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#priority-queue的底层原理"><span class="toc-number">26.</span> <span class="toc-text">priority_queue的底层原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map-、set、multiset、multimap的底层原理（红黑树的特点）"><span class="toc-number">27.</span> <span class="toc-text">map 、set、multiset、multimap的底层原理（红黑树的特点）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unordered-map、unordered-set的底层原理"><span class="toc-number">28.</span> <span class="toc-text">unordered_map、unordered_set的底层原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unordered-map-与map的区别？使用场景？"><span class="toc-number">29.</span> <span class="toc-text">unordered_map 与map的区别？使用场景？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#哈希函数有哪几种常见的方法？"><span class="toc-number">30.</span> <span class="toc-text">哈希函数有哪几种常见的方法？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#哈希冲突有哪几种解决方法？"><span class="toc-number">31.</span> <span class="toc-text">哈希冲突有哪几种解决方法？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#右值引用及移动语义"><span class="toc-number">32.</span> <span class="toc-text">右值引用及移动语义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是深拷贝？什么是浅拷贝？"><span class="toc-number">33.</span> <span class="toc-text">什么是深拷贝？什么是浅拷贝？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-中父类指针指向子类对象是如何实现的？"><span class="toc-number">34.</span> <span class="toc-text">C++中父类指针指向子类对象是如何实现的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-11引入了哪些新特性？"><span class="toc-number">35.</span> <span class="toc-text">C++11引入了哪些新特性？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简述一下Lambda表达式"><span class="toc-number">36.</span> <span class="toc-text">简述一下Lambda表达式</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/photo/MSBD.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">K`onnor</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 画册</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">C++常见的面试题与答案</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2022-03-29 10:47:06"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2022-03-29</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2022-04-03 11:30:19"><i class="fas fa-history fa-fw"></i> 更新于 2022-04-03</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E7%AC%94%E8%AF%95%E9%9D%A2%E8%AF%95/">笔试面试</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>后悔没早点积累一些面试的经验，导致一下子挂了两个公司的技术面</p>
+<p>亡羊补牢，为时不晚，赶紧整理一波面试中常见的问题</p>
+<hr>
+<h4 id="static和const的区别"><a href="#static和const的区别" class="headerlink" title="static和const的区别"></a>static和const的区别</h4><p>static用于<strong>改变生命周期或作用域</strong>，有以下几种特性：</p>
+<ul>
+<li>static+局部变量 将一个变量声明为函数的局部变量，那么这个局部变量在函数执行完成之后不会被释放，而是继续保存在内存中</li>
+<li>static+全局变量 表示一个变量在<strong>当前文件</strong>的全局可访问</li>
+<li>static+函数 表示一个函数只能在<strong>当前文件</strong>中被访问</li>
+<li>static+类成员变量 表示这个成员为<strong>全类所共有</strong></li>
+<li>static+类成员函数 表示这个<strong>函数为全类所共有</strong>，而且<strong>只能访问静态成员变量</strong></li>
+</ul>
+<p>const用于定义常量，使其在<strong>整个作用域中保持不变</strong></p>
+<ul>
+<li>阻止一个变量被改变</li>
+<li>声明常量指针和指针常量</li>
+<li>const修饰形参，表明它是一个输入参数，在函数内部不能改变其值</li>
+<li>对于类的成员函数，若指定其为const类型，则表明其是一个常函数，不能修改类的成员变量</li>
+<li>对于类的成员函数，有时候必须指定其返回值为const类型，以使得其返回值不为”左值”</li>
+</ul>
+<h4 id="函数指针、指针函数、常量指针、指针常量、常量引用的概念"><a href="#函数指针、指针函数、常量指针、指针常量、常量引用的概念" class="headerlink" title="函数指针、指针函数、常量指针、指针常量、常量引用的概念"></a>函数指针、指针函数、常量指针、指针常量、常量引用的概念</h4><p><strong>函数指针</strong>：指向函数的指针</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> x， <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(x &lt; y) </span><br><span class="line">       	<span class="keyword">return</span> y;</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">   		<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> (*p)(<span class="keyword">int</span>， <span class="keyword">int</span>); 		<span class="comment">//函数指针的声明</span></span><br><span class="line">   p = cmp;            		<span class="comment">//指定该函数指针指向哪个函数</span></span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; p(<span class="number">3</span>， <span class="number">4</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>指针函数</strong>：返回指针的函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">cmp</span><span class="params">(<span class="keyword">int</span> x， <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res;</span><br><span class="line">	<span class="keyword">if</span>(x &lt; y) </span><br><span class="line">        res = y;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">        res = x;</span><br><span class="line">	<span class="keyword">return</span> &amp;res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>常量指针</strong>：指向常量的指针，表示的是<strong>指向的对象是一个常量</strong>，即不允许通过指针修改它的值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>， j = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span>* p = &amp;i;</span><br><span class="line">	*p = <span class="number">10</span>; 	<span class="comment">//不允许，因为指针指向的对象为一个常量</span></span><br><span class="line">	p = &amp;j;  	<span class="comment">//允许，此时指针指向了变量j</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>指针常量</strong>：指针本身是一个常量，表示指针<strong>本身的地址是一个常量</strong>，不能将此指针指向其它的变量</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>， j = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span>* <span class="keyword">const</span> p = &amp;i;</span><br><span class="line">	*p = <span class="number">10</span>; 		<span class="comment">//允许，修改了指针指向对象的值</span></span><br><span class="line">	p = &amp;j;  		<span class="comment">//不允许，指针本身是一个常量，不再允许指向其它的变量</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>Ps：<strong>左值右址</strong>，const在星号左边表示值为常量，const在星号右边表示地址为常量</em></p>
+<p><strong>常量引用</strong>：指向常量的引用，引用指向的对象是一个常量，不允许通过引用修改它的值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> &amp;q = i;</span><br><span class="line">	q = <span class="number">10</span>; 		<span class="comment">//不允许，因为引用指向的对象是一个常量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="指针和引用的区别"><a href="#指针和引用的区别" class="headerlink" title="指针和引用的区别"></a>指针和引用的区别</h4><ul>
+<li>指针占内存，引用只是别名，本身不占内存</li>
+<li>引用必须初始化，指针不需要</li>
+<li>引用不能为空，指针可以</li>
+<li>引用一旦初始化不能重新引用，而指针可以改变指向</li>
+<li>sizeof引用得到的所指向对象的大小，而sizeof指针得到的指针本身大小</li>
+<li>指针和引用的自增，自减运算意义不同，引用自加改变变量的内容，指针自加改变了指针指向</li>
+<li>可以有多级指针， 但是没有多级引用</li>
+<li>指针和引用的地址不同，引用的地址即所引用对象的地址，指针的地址就是它自己的地址，是内存中的一块实实在在的另一块内存；</li>
+<li>引用比指针更安全。不会出现像野指针这样的现象。</li>
+</ul>
+<h4 id="什么是野指针，指针越界，悬挂指针？"><a href="#什么是野指针，指针越界，悬挂指针？" class="headerlink" title="什么是野指针，指针越界，悬挂指针？"></a>什么是野指针，指针越界，悬挂指针？</h4><p>野指针指向一个<strong>已经删除的对象</strong>，或者<strong>未申请访问受限内存区域的指针</strong>。悬挂指针又叫野指针。野指针来源如下：</p>
+<ul>
+<li>指针变量未初始化(指向受限内存) </li>
+<li>指针释放之后未置空 </li>
+<li>指针操作超越变量作用域</li>
+</ul>
+<h4 id="宏（-define）和内联函数（inline）的理解以及区别"><a href="#宏（-define）和内联函数（inline）的理解以及区别" class="headerlink" title="宏（#define）和内联函数（inline）的理解以及区别"></a>宏（#define）和内联函数（inline）的理解以及区别</h4><p><strong>宏的缺点：</strong></p>
+<ul>
+<li><strong>宏没有类型检测</strong>，不安全</li>
+<li>宏是在预处理时进行简单文本替换，并不是简单的参数传递</li>
+<li>使代码变长</li>
+<li>宏不能进行调试</li>
+</ul>
+<p><strong>宏的优点：</strong></p>
+<ul>
+<li>加快了代码的运行效率</li>
+<li>让代码变得更加的通用</li>
+</ul>
+<p><strong>内联函数缺点</strong>：</p>
+<ul>
+<li>代码变长，占用更多内存</li>
+</ul>
+<p><strong>内联函数优点</strong>：</p>
+<ul>
+<li>有类型检测，更加的安全</li>
+<li>内联函数是<strong>在程序运行时展开</strong>，而且是<strong>进行的是参数传递</strong></li>
+<li>编译器可以检测定义的内联函数是否满足要求，如果不满足就会当作普通函数调用</li>
+</ul>
+<p><strong>两者不同点：</strong></p>
+<ul>
+<li>内联函数的调用是传参，宏定义只是简单的文本替换</li>
+<li>内联函数可以在程序运行时调用，宏定义是在程序编译进行</li>
+<li>内联函数有类型检测更加的安全，宏定义没有类型检测</li>
+<li>内联函数在运行时可调式，宏定义不可以</li>
+<li>内联函数可以访问类的成员变量，宏不可以</li>
+<li>类中的成员函数是默认的内联函数  </li>
+</ul>
+<h4 id="C-的智能指针"><a href="#C-的智能指针" class="headerlink" title="C++的智能指针"></a>C++的智能指针</h4><p>详见我专门的一篇智能指针博客：<a href="https://nomore-name.github.io/2022/03/25/C-%E4%B8%AD%E7%9A%84%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" target="_blank" rel="noopener">https://nomore-name.github.io/2022/03/25/C-%E4%B8%AD%E7%9A%84%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</a></p>
+<h4 id="堆和栈的区别"><a href="#堆和栈的区别" class="headerlink" title="堆和栈的区别"></a>堆和栈的区别</h4><ul>
+<li>堆是由程序员自己申请并指明大小，而栈由系统自动分配</li>
+<li>栈区空间连续，效率高，堆区不连续，申请堆区相当于遍历空闲地址空间地址的链表，耗时大</li>
+<li>栈区分配地址从大到小，堆区分配从小到大</li>
+<li>栈区不会产生内存碎片，堆区会产生内碎片</li>
+</ul>
+<h4 id="什么是多态？"><a href="#什么是多态？" class="headerlink" title="什么是多态？"></a>什么是多态？</h4><p>多态：同一个对象在不同场景下的多个形态，多态分为静态多态和动态多态</p>
+<p><strong>静态多态</strong>的实现依靠<strong>函数重载</strong>，编译器<strong>在编译期间完成</strong>的，编译器会根据实参类型来选择调用合适的函数，如果有合适的函数可以调用就调，没有的话就会发出警告或者报错。</p>
+<p><strong>动态多态</strong>的实现依靠<strong>虚函数</strong>和动态绑定机制来实现，意思是在<strong>程序运行时</strong>根据<strong>父类指针指向对象</strong>来决定应该调用哪个子类的虚函数，它的好处在于提高了代码的扩展性。</p>
+<h4 id="为什么构造函数不能为虚函数？"><a href="#为什么构造函数不能为虚函数？" class="headerlink" title="为什么构造函数不能为虚函数？"></a>为什么构造函数不能为虚函数？</h4><p>虚函数的调用需要虚函数表指针，而该指针存放在对象的内存空间中；若构造函数声明为虚函数，那么由于对象还未创建，还没有内存空间，更没有虚函数表地址用来调用虚函数——构造函数了。</p>
+<h4 id="解释什么是动态编译，什么是静态编译？"><a href="#解释什么是动态编译，什么是静态编译？" class="headerlink" title="解释什么是动态编译，什么是静态编译？"></a>解释什么是动态编译，什么是静态编译？</h4><p>静态编译就是在编译时，把所有模块都编译进可执行文件里，当启动这个可执行文件时，所有模块都被加载进来。</p>
+<p>动态编译是将应用程序需要的模块都编译成动态链接库，启动程序（初始化）时，这些模块不会被加载，运行时用到哪个模块就调用哪个。</p>
+<h4 id="什么是虚函数与虚表？"><a href="#什么是虚函数与虚表？" class="headerlink" title="什么是虚函数与虚表？"></a>什么是虚函数与虚表？</h4><p>virtual关键字修饰的成员函数，就是虚函数，继承父类的子类可以重写虚函数，动态多态的实现，依靠虚函数表和动态绑定。<br>虚函数表（vtable），由编译器编译生成并存放在某处，程序运行时在<strong>构造对象时会将该地址存放在对象</strong>中。在真正调用的时候会先通过存储在对象中的虚函数表的地址，寻找得到真正需要调用的成员函数的地址，也就是说<strong>虚函数表在编译期就已经确定</strong>，而<strong>虚函数表的地址在运行期时才确定</strong>。虚表会被这个类的所有对象所共享。</p>
+<h4 id="什么是虚指针？"><a href="#什么是虚指针？" class="headerlink" title="什么是虚指针？"></a>什么是虚指针？</h4><p>当一个类中有虚函数时，每一个类的对象都有一个指向虚表开始的虚指针，它发生在对象运行期，当对象创建的时候，虚函数表表指针位于该对象所在内存的最前面，虚表是和类对应的，虚表指针是和对象对应的。</p>
+<h4 id="基类指针指向派生类的对象，会出现什么情况？"><a href="#基类指针指向派生类的对象，会出现什么情况？" class="headerlink" title="基类指针指向派生类的对象，会出现什么情况？"></a>基类指针指向派生类的对象，会出现什么情况？</h4><p>派生类的对象可以被当做基类对象对待，因为<strong>派生类包含基类的所有成员，反之则不成立</strong>。</p>
+<p>因此，将<strong>基类指针指向派生类对象是安全的</strong>。此时这个<strong>基类指针只能调用基类的成员函数</strong>。</p>
+<p>如果试图用基类指针调用派生类才具有的成员函数，编译器会报错。虚函数的出现可以解决这个问题。通过基类指针在派生类对象上调用这个虚函数，实际调用的是这个虚函数的派生类版本。</p>
+<p>如果基类指针指向一个派生类对象，<strong>析构函数不是虚函数的话，基类指针只能调用基类的析构函数</strong>，派生类中的一些内存可能无法释放，造成内存泄露。而把析构函数定义成虚函数，那么基类指针调用的将是派生类的析构函数，然后再调用基类的析构函数。这样就解决了内存泄露的问题。</p>
+<h4 id="new和malloc的区别"><a href="#new和malloc的区别" class="headerlink" title="new和malloc的区别?"></a>new和malloc的区别?</h4><ul>
+<li>new是c++关键字，需要编译器支持，<strong>malloc是库函数</strong>，需要头文件支持</li>
+<li>使用new操作符申请内存分配时无须指定内存块的大小，编译器会根据类型信息自行计算，而malloc则需要显式的指出所需要内存的尺寸</li>
+<li>new操作符内存分配成功时，返回的是对象类型的指针，类型严格与对象匹配，无须进行类型转换，故new是符合类型安全性的操作符。而malloc内存分配成功则是返回的是void*，需要通过强制类型转换将指针转换成我们需要的类型</li>
+<li>new内存分配失败时，会抛出异常，malloc内存分配失败时返回NULL</li>
+</ul>
+<h4 id="delete和delete-的用法，使用不当为什么会造成那些现象？原理是什么？"><a href="#delete和delete-的用法，使用不当为什么会造成那些现象？原理是什么？" class="headerlink" title="delete和delete[]的用法，使用不当为什么会造成那些现象？原理是什么？"></a>delete和delete[]的用法，使用不当为什么会造成那些现象？原理是什么？</h4><p>delete释放new分配的单个对象指针指向的内存，delete[]释放new分配的对象数组指针指向的内存</p>
+<p>如果该对象是某个类的数组话，那么delete只会调用第一个位置对象的析构函数，导致内存泄漏的发生</p>
+<h4 id="什么是内存池？"><a href="#什么是内存池？" class="headerlink" title="什么是内存池？"></a>什么是内存池？</h4><p>代替直接调用malloc/free、new/delete进行内存管理的常用方法，当我们申请内存空间时，首先到我们的内存池中查找合适的内存块，而不是直接向操作系统申请，其优势在于：比malloc/free进行内存申请/释放的方式快；不会产生或很少产生堆碎片；可避免内存泄漏</p>
+<h4 id="struct和class的区别"><a href="#struct和class的区别" class="headerlink" title="struct和class的区别?"></a>struct和class的区别?</h4><p>struct其实是从C语言中过渡而来，在C语言中只是作为一个存储结构而存在在c++中扩充了很多的功能</p>
+<ul>
+<li>默认的继承访问权。class默认的是private,strcut默认的是public。</li>
+<li>默认访问权限：struct作为数据结构的实现体，它默认的数据访问控制是public的，而class作为对象的实现体，它默认的成员变量访问控制是private的。</li>
+</ul>
+<h4 id="STL是什么？"><a href="#STL是什么？" class="headerlink" title="STL是什么？"></a>STL是什么？</h4><p>是C++的标准库之一，一套基于模板的容器类库，还包括许多常用的算法，提高了程序开发效率和复用性。STL包含6大部件：<strong>容器、迭代器、算法、仿函数、适配器和空间配置器。</strong></p>
+<ul>
+<li><p>容器：容纳一组元素的对象。</p>
+</li>
+<li><p>迭代器：提供一种访问容器中每个元素的方法。</p>
+</li>
+<li><p>函数对象：一个行为类似函数的对象，调用它就像调用函数一样。</p>
+</li>
+<li><p>算法：包括查找算法、排序算法等等。</p>
+</li>
+<li><p>适配器：用来修饰容器等，比如queue和stack，底层借助了deque。</p>
+</li>
+<li><p>空间配置器：负责空间配置和管理。</p>
+</li>
+</ul>
+<h4 id="STL容器的简单介绍"><a href="#STL容器的简单介绍" class="headerlink" title="STL容器的简单介绍"></a>STL容器的简单介绍</h4><p>具体见我C++中的STL系列博客</p>
+<h4 id="STL中的迭代器有哪些？"><a href="#STL中的迭代器有哪些？" class="headerlink" title="STL中的迭代器有哪些？"></a>STL中的迭代器有哪些？</h4><p>迭代器是一个变量，相当于容器和操纵容器的算法之间的中介。迭代器可以指向容器中的某个元素，通过迭代器就可以读写它指向的元素。迭代器按照定义方式分成以下四种：</p>
+<ul>
+<li>正向迭代器，定义方法如下：<code>容器类名::iterator  迭代器名;</code></li>
+<li>常量正向迭代器，定义方法如下：<code>容器类名::const_iterator  迭代器名;</code></li>
+<li>反向迭代器，定义方法如下：<code>容器类名::reverse_iterator  迭代器名;</code></li>
+<li>常量反向迭代器，定义方法如下：<code>容器类名::const_reverse_iterator  迭代器名;</code></li>
+</ul>
+<p>通过迭代器可以读取它指向的元素，*迭代器名就表示迭代器指向的元素，通过非常量迭代器还能修改其指向的元素。</p>
+<h4 id="STL中的sort使用了什么排序"><a href="#STL中的sort使用了什么排序" class="headerlink" title="STL中的sort使用了什么排序"></a>STL中的sort使用了什么排序</h4><p>快排+插入排序+堆排序，STL的sort算法，数据量大时采用快速排序，分段归并排序。一旦分段后的数据量小于某个门槛（16），为避免快排的递归调用带来过大的额外负荷，就改用插入排序。如果递归层次过深，改用堆排序，因为堆排序是时间复杂度恒定为O(nlogn)，又因为插入排序在面对“几近排序”的序列时，表现更好。</p>
+<h4 id="vector的底层原理"><a href="#vector的底层原理" class="headerlink" title="vector的底层原理"></a>vector的底层原理</h4><p>vector底层是一个<strong>动态数组</strong>，包含三个迭代器，start和finish之间是已经被使用的空间范围，end_of_storage是整块连续空间包括备用空间的尾部。当空间不够装下数据时，<strong>会自动申请另一片更大的空间（1.5倍或者2倍</strong>），然后把原来的数据拷贝到新的内存空间，接着释放原来的那片空间。当释放或者删除（vec.clear()）里面的数据时，其存储空间不释放，仅仅是清空了里面的数据。</p>
+<p><img src= "/img/loading.gif" data-src="/photo/MST1-1.jpg" alt=""></p>
+<h4 id="vector的元素类型可以是引用吗？"><a href="#vector的元素类型可以是引用吗？" class="headerlink" title="vector的元素类型可以是引用吗？"></a>vector的元素类型可以是引用吗？</h4><p>vector的底层实现要求连续的<strong>对象排列</strong>，<strong>引用并非对象，没有实际地址，因此vector的元素类型不能是引用</strong>。</p>
+<h4 id="list的底层原理"><a href="#list的底层原理" class="headerlink" title="list的底层原理"></a>list的底层原理</h4><p>list的底层是一个<strong>双向链表</strong>，以结点为单位存放数据，结点的<strong>地址在内存中不一定连续</strong>，每次插入或删除一个元素，就配置或释放一个元素空间。list不支持随机存取，如果需要大量的插入和删除，而不关心随即存取。</p>
+<h4 id="deque的底层原理"><a href="#deque的底层原理" class="headerlink" title="deque的底层原理"></a>deque的底层原理</h4><p>deque是一个双向开口的连续线性空间（<strong>双端队列</strong>），在头尾两端进行元素的插入跟删除操作都有理想的时间复杂度。deque 容器存储数据的空间是由一段一段等长的连续空间构成，各段<strong>空间之间并不一定是连续的，可以位于在内存的不同区域</strong>。为了管理这些连续空间，<strong>deque 容器用数组存储着各个连续空间的首地址</strong>。</p>
+<h4 id="priority-queue的底层原理"><a href="#priority-queue的底层原理" class="headerlink" title="priority_queue的底层原理"></a>priority_queue的底层原理</h4><p>priority_queue其底层是<strong>用堆来实现</strong>的。在优先队列中，队首元素一定是当前队列中优先级最高的那一个。</p>
+<h4 id="map-、set、multiset、multimap的底层原理（红黑树的特点）"><a href="#map-、set、multiset、multimap的底层原理（红黑树的特点）" class="headerlink" title="map 、set、multiset、multimap的底层原理（红黑树的特点）"></a>map 、set、multiset、multimap的底层原理（红黑树的特点）</h4><p>map 、set、multiset、multimap的底层实现都是<strong>红黑树</strong></p>
+<p>红黑树是每个结点都带有颜色属性的二叉查找树，颜色或红色或黑色。除了二叉查找树的基本性质外，红黑树还有以下性质</p>
+<ul>
+<li>每个结点或是红色或是黑色；</li>
+<li>根结点是黑色；</li>
+<li>每个叶结点是黑的；</li>
+<li>如果一个结点是红的，则它的两个儿子均是黑色；</li>
+<li>每个结点到其子孙结点的所有路径上包含相同数目的黑色结点。</li>
+</ul>
+<p>这些约束强制了红黑树的关键性质：<strong>从根到叶子的最长的可能路径不多于最短的可能路径的两倍长</strong>，因此红黑树增删改查的时间复杂度为<strong>O(logn)</strong></p>
+<h4 id="unordered-map、unordered-set的底层原理"><a href="#unordered-map、unordered-set的底层原理" class="headerlink" title="unordered_map、unordered_set的底层原理"></a>unordered_map、unordered_set的底层原理</h4><p>unordered_map的底层是一个防冗余的<strong>哈希表</strong>（采用除留余数法）。哈希表最大的优点，就是把<strong>数据的存储和查找消耗的时间大大降低，时间复杂度为O(1)</strong>，而代价仅仅是消耗比较多的内存。</p>
+<h4 id="unordered-map-与map的区别？使用场景？"><a href="#unordered-map-与map的区别？使用场景？" class="headerlink" title="unordered_map 与map的区别？使用场景？"></a>unordered_map 与map的区别？使用场景？</h4><p>unordered_map 采用hash表存储，map采用红黑树(RB Tree) 实现。总体来说，unordered_map 查找速度会比map快，而且查找速度基本和数据数据量大小，属于常数级别，而map的查找速度是O(logn)级别，如果考虑效率，特别是在元素达到一定数量级时，考虑考虑unordered_map 。但若你对内存使用特别严格，希望程序尽可能少消耗内存，那么采用map更好，特别是当unordered_map 对象特别多时，就更无法控制了，而且unordered_map 的构造速度较慢。</p>
+<h4 id="哈希函数有哪几种常见的方法？"><a href="#哈希函数有哪几种常见的方法？" class="headerlink" title="哈希函数有哪几种常见的方法？"></a>哈希函数有哪几种常见的方法？</h4><ul>
+<li><strong>直接寻址法</strong>：取关键字或关键字的某个线性函数值为散列地址。</li>
+<li><strong>数字分析法</strong>：通过对数据的分析，发现数据中冲突较少的部分，并构造散列地址。</li>
+<li><strong>平方取中法</strong>：当无法确定关键字里哪几位的分布相对比较均匀时，可以先求出关键字的平方值，然后按需要取平方值的中间几位作为散列地址。</li>
+<li><strong>取随机数法</strong>：使用一个随机函数，取关键字的随机值作为散列地址，这种方式通常用于关键字长度不同的场合。</li>
+<li><strong>除留取余法</strong>：取关键字被某个不大于散列表的表长 n 的数 m 除后所得的余数 p 为散列地址。这种方式也可以在用过其他方法后再使用。</li>
+</ul>
+<h4 id="哈希冲突有哪几种解决方法？"><a href="#哈希冲突有哪几种解决方法？" class="headerlink" title="哈希冲突有哪几种解决方法？"></a>哈希冲突有哪几种解决方法？</h4><ul>
+<li><strong>开放寻址法</strong>：对计算出来的地址进行一个探测再哈希，比如往后移动一个地址，如果没人占用，就用这个地址。</li>
+<li><strong>再哈希法</strong>：在产生冲突之后，使用关键字的其他部分继续计算地址，如果还是有冲突，则继续使用其他部分再计算地址。这种方式的缺点是时间增加了。</li>
+<li><strong>链地址法</strong>：链地址法其实就是对Key通过哈希之后落在同一个地址上的值，做一个链表。（也是STL无序容器所使用的方法）</li>
+</ul>
+<h4 id="右值引用及移动语义"><a href="#右值引用及移动语义" class="headerlink" title="右值引用及移动语义"></a>右值引用及移动语义</h4><p>详见我的另一篇博文：<a href="https://nomore-name.github.io/2022/03/26/C-%E4%B8%AD%E7%9A%84%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" target="_blank" rel="noopener">https://nomore-name.github.io/2022/03/26/C-%E4%B8%AD%E7%9A%84%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/</a></p>
+<h4 id="什么是深拷贝？什么是浅拷贝？"><a href="#什么是深拷贝？什么是浅拷贝？" class="headerlink" title="什么是深拷贝？什么是浅拷贝？"></a>什么是深拷贝？什么是浅拷贝？</h4><ul>
+<li>深拷贝是拷贝时先开辟与源对象大小一样的空间，然后将源对象的内容拷贝到目标对象去，这样两个指针就指向了不同的位置，调用析构也不会释放同一块内存。</li>
+<li>浅拷贝又称值拷贝，本质上源对象和目标对象共同同一份实体，地址是相同的。</li>
+</ul>
+<h4 id="C-中父类指针指向子类对象是如何实现的？"><a href="#C-中父类指针指向子类对象是如何实现的？" class="headerlink" title="C++中父类指针指向子类对象是如何实现的？"></a>C++中父类指针指向子类对象是如何实现的？</h4><p>当定义一个指向子类实例的父类指针的时候，<strong>内存中实例化了子类</strong>，由于子类继承了父类，因此内存中的<strong>子类里包含父类的所有成员</strong>。但由于声明的是父类指针，因此该指针不能够访问子类的成员，而只能访问父类的成员。</p>
+<p>在父类里可以声明纯虚函数和定义虚函数，使用父类指针访问虚函数或纯虚函数的时候，访问到的是子类里重写的函数。当然，对于虚函数，如果子类里没有对其重写的话，仍然访问到父类里定义的虚函数。</p>
+<h4 id="C-11引入了哪些新特性？"><a href="#C-11引入了哪些新特性？" class="headerlink" title="C++11引入了哪些新特性？"></a>C++11引入了哪些新特性？</h4><ul>
+<li>统一的列表初始化</li>
+<li>类成员变量的默认初始化</li>
+<li>auto关键字</li>
+<li>decltype求表达式的类型</li>
+<li>智能指针</li>
+<li>空指针nullptr</li>
+<li>右值引用与转移语义</li>
+<li>STL的无序容器</li>
+<li>Lambda表达式</li>
+</ul>
+<h4 id="简述一下Lambda表达式"><a href="#简述一下Lambda表达式" class="headerlink" title="简述一下Lambda表达式"></a>简述一下Lambda表达式</h4><p>lambda 表达式是一个匿名函数，用于定义并创建匿名的函数对象，以简化编程工作。其定义格式如下：</p>
+<p><code>[外部变量访问方式说明符] (参数表) -&gt; 返回值类型</code><br><code>{</code><br>       <code>语句块</code><br><code>}</code></p>
+<p>外部变量访问方式说明符如下：</p>
+<ul>
+<li><strong>空</strong> 没有使用任何函数对象参数。</li>
+<li><strong>=</strong> 函数体内可以使用lambda所在作用范围内所有可见的局部变量（包括lambda所在类的this），并且是<strong>值传递方式</strong>（相当于编译器自动为我们按值传递了所有局部变量）。</li>
+<li><strong>&amp;</strong> 函数体内可以使用lambda所在作用范围内所有可见的局部变量（包括lambda所在类的this），并且是<strong>引用传递方式</strong>（相当于编译器自动为我们按引用传递了所有局部变量）。</li>
+<li><p><strong>this</strong> 函数体内可以使用lambda所在类中的成员变量。</p>
+</li>
+<li><p><strong>a</strong>   将a按值进行传递。按值进行传递时，函数体内不能修改传递进来的a的拷贝，因为默认情况下函数是const的。要修改传递进来的a的拷贝，可以添加mutable修饰符。</p>
+</li>
+<li><strong>&amp;a</strong>   将a按引用进行传递。</li>
+<li><strong>a, &amp;b</strong>    将a按值进行传递，b按引用进行传递。</li>
+<li><strong>=，&amp;a, &amp;b</strong>    除a和b按引用进行传递外，其他参数都按值进行传递。</li>
+<li><strong>&amp;, a, b</strong>    除a和b按值进行传递外，其他参数都按引用进行传递。</li>
+</ul>
+<p>下面是一句合法的lambda表达式：</p>
+<p><code>[=] (int x, int y) -&gt; bool {return x &lt; y ;}</code></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">KangKang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2022/03/29/C-%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%8E%E7%AD%94%E6%A1%88/">http://yoursite.com/2022/03/29/C-%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%8E%E7%AD%94%E6%A1%88/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com" target="_blank">K`onnor</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="/photo/MSBD.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechat.jpg" alt="微信" onclick="window.open('/img/wechat.jpg')"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="支付宝" onclick="window.open('/img/alipay.jpg')"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/"><img class="prev-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数据结构与计算机网络的常见面试题</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/26/C-%E4%B8%AD%E7%9A%84%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><img class="next-cover" data-src="/photo/CPP.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++中的移动语义</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/11/30/C-中的STL-string的用法/" title="C++中的STL:string的基本使用"><img class="relatedPosts_cover" data-src="/photo/CSTL.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-30</div><div class="relatedPosts_title">C++中的STL:string的基本使用</div></div></a></div><div class="relatedPosts_item"><a href="/2022/03/10/C-中的STL-map、stack、queue的基本使用/" title="C++中的STL:set、map、stack、queue的基本使用"><img class="relatedPosts_cover" data-src="/photo/CSTL.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-10</div><div class="relatedPosts_title">C++中的STL:set、map、stack、queue的基本使用</div></div></a></div><div class="relatedPosts_item"><a href="/2022/03/25/C-中的智能指针/" title="C++中的智能指针"><img class="relatedPosts_cover" data-src="/photo/CPP.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-25</div><div class="relatedPosts_title">C++中的智能指针</div></div></a></div><div class="relatedPosts_item"><a href="/2022/03/09/C-中的STL-vector、list、deque、set、map、stack、queue的基本使用/" title="C++中的STL:vector、list、deque的基本使用"><img class="relatedPosts_cover" data-src="/photo/CSTL.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-09</div><div class="relatedPosts_title">C++中的STL:vector、list、deque的基本使用</div></div></a></div><div class="relatedPosts_item"><a href="/2022/03/26/C-中的移动语义/" title="C++中的移动语义"><img class="relatedPosts_cover" data-src="/photo/CPP.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-26</div><div class="relatedPosts_title">C++中的移动语义</div></div></a></div><div class="relatedPosts_item"><a href="/2020/07/27/C-的面向对象-I-类-对象/" title="C++的面向对象 I:类&对象"><img class="relatedPosts_cover" data-src="/photo/CMXDX.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-27</div><div class="relatedPosts_title">C++的面向对象 I:类&对象</div></div></a></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By KangKang</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script></body></html>
